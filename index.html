@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TONY MYINT KYAW – Resume</title>
+  <meta name="description" content="Resume/CV of Your Name – Frontend Developer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --card: #f8fafc;
+      --text: #0f172a;
+      --muted: #475569;
+      --accent: #2563eb;
+      --border: #e2e8f0;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0b1020;
+        --card: #0f172a;
+        --text: #e5e7eb;
+        --muted: #94a3b8;
+        --accent: #60a5fa;
+        --border: #1f2a44;
+      }
+    }
+    html, body { height: 100%; }
+    body {
+      margin: 0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      background: var(--bg); color: var(--text);
+      -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+    }
+    .container { max-width: 900px; margin: 24px auto; padding: 0 16px 64px; }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 24px; }
+
+    /* Header layout updated to support profile image */
+    header {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: 1fr;
+      align-items: start;
+    }
+    @media (min-width: 800px) {
+      header {
+        grid-template-columns: auto 1fr auto; /* [image] [text/meta] [actions] */
+        align-items: center;
+      }
+    }
+
+    .profile-img-wrap { display: flex; align-items: center; justify-content: center; }
+    .profile-img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid var(--border);
+    }
+
+    .title { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+    h1 { margin: 0; font-size: 2rem; line-height: 1.1; }
+    .role { color: var(--muted); font-weight: 500; }
+    .meta { display: flex; flex-wrap: wrap; gap: 10px; color: var(--muted); font-size: 0.95rem; }
+    .meta a { color: var(--accent); text-decoration: none; }
+    .badges { display: flex; gap: 8px; flex-wrap: wrap; }
+    .badge { padding: 6px 10px; border-radius: 999px; background: #e2e8f04d; border: 1px solid var(--border); font-size: 0.85rem; }
+
+    h2 { margin: 28px 0 12px; font-size: 1.25rem; letter-spacing: .2px; }
+    section { margin-top: 12px; }
+    .grid-2 { display: grid; grid-template-columns: 1fr; gap: 16px; }
+    @media (min-width: 800px) { .grid-2 { grid-template-columns: 1fr 1fr; } }
+
+    ul.clean { list-style: none; padding: 0; margin: 0; }
+    ul.clean li { margin: 10px 0; }
+    .row { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+    .row .left { font-weight: 600; }
+    .row .right { color: var(--muted); white-space: nowrap; }
+
+    .item { padding: 14px 0; border-bottom: 1px dashed var(--border); }
+    .item:last-child { border-bottom: none; }
+    .item h3 { margin: 0 0 6px; font-size: 1.05rem; }
+    .item .sub { color: var(--muted); font-size: .95rem; }
+    .item ul { margin: 8px 0 0 18px; }
+
+    a.btn { display: inline-block; border: 1px solid var(--border); padding: 8px 12px; border-radius: 10px; text-decoration: none; color: var(--text); background: linear-gradient(180deg, var(--card), transparent); }
+    .actions { display: flex; gap: 10px; flex-wrap: wrap; justify-self: end; }
+
+    .skills { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chip { border: 1px solid var(--border); background: #ffffff1a; border-radius: 999px; padding: 6px 10px; font-size: .9rem; }
+
+    footer { margin-top: 28px; color: var(--muted); font-size: .9rem; text-align: center; }
+
+    /* Diagnostics */
+    #diagnostics { margin-top: 16px; font-size: .9rem; color: var(--muted); }
+    #diagnostics .pass { color: green; }
+    #diagnostics .fail { color: #b91c1c; }
+
+    /* Print */
+    @media print {
+      body { background: #fff; }
+      .card { border: none; }
+      a.btn, .actions, #diagnostics { display: none !important; }
+      .container { padding-bottom: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <header>
+        <!-- Profile image column -->
+        <div class="profile-img-wrap">
+          <!-- Replace src with your file name -->
+          <img src="profile.jpg" alt="Your Name" class="profile-img" id="profile-img">
+        </div>
+
+        <!-- Name/role/meta column -->
+        <div>
+          <div class="title">
+            <h1>TONY MYINT KYAW</h1>
+            <span class="role">Full-Stack Developer</span>
+          </div>
+          <div class="meta">
+            <span>📍 Yangon, Myanmar</span>
+            <span>✉️ <a href="mailto:you@example.com">you@example.com</a></span>
+            <span>🔗 <a href="https://github.com/yourusername">github.com/yourusername</a></span>
+            <span>🌐 <a href="https://yourdomain.com">yourdomain.com</a></span>
+            <span>💼 <a href="https://www.linkedin.com/in/yourusername/">LinkedIn</a></span>
+          </div>
+        </div>
+
+        <!-- Actions column -->
+        <div class="actions">
+          <a id="print-btn" class="btn" href="#">🖨️ Print / Save PDF</a>
+          <a class="btn" href="https://github.com/yourusername" target="_blank" rel="noreferrer">⭐ GitHub</a>
+        </div>
+      </header>
+
+      <section>
+        <h2>Profile</h2>
+        <p>
+          Developer with <strong>5+ years</strong> building web apps with <strong>Node.js</strong>, <strong>React/Next.js</strong>, and <strong>PostgreSQL</strong>. Passionate about clean UI, performance, and automation. Open to remote roles and freelance.
+        </p>
+      </section>
+
+      <section class="grid-2">
+        <div>
+          <h2>Skills</h2>
+          <div class="skills">
+            <span class="chip">JavaScript / TypeScript</span>
+            <span class="chip">Node.js / Express</span>
+            <span class="chip">React / Next.js</span>
+            <span class="chip">PostgreSQL / Supabase</span>
+            <span class="chip">REST / GraphQL</span>
+            <span class="chip">Docker / CI/CD</span>
+            <span class="chip">Git / GitHub Actions</span>
+            <span class="chip">Tailwind CSS</span>
+          </div>
+        </div>
+        <div>
+          <h2>Highlights</h2>
+          <ul class="clean">
+            <li>🏆 Reduced page load by 45% via code-splitting & image optimization.</li>
+            <li>🔧 Designed multi-tenant RBAC API used by 10+ internal tools.</li>
+            <li>📈 Led migration to Supabase with RLS; cut ops incidents by 30%.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>Experience</h2>
+        <div class="item">
+          <div class="row">
+            <div class="left">Senior Full-Stack Developer – Example Co</div>
+            <div class="right">Jan 2023 – Present</div>
+          </div>
+          <div class="sub">Remote • TypeScript, Next.js, Node, Postgres, Supabase</div>
+          <ul>
+            <li>Built SSR e-commerce platform serving 100k+ monthly users; Lighthouse 95+.</li>
+            <li>Created order & payment microservice; reduced checkout failures by 22%.</li>
+            <li>Owned CI/CD with GitHub Actions & Docker; 1-click deploy to production.</li>
+          </ul>
+        </div>
+        <div class="item">
+          <div class="row">
+            <div class="left">Frontend Engineer – Startup XYZ</div>
+            <div class="right">Aug 2020 – Dec 2022</div>
+          </div>
+          <div class="sub">Yangon • React, Redux Toolkit, Tailwind</div>
+          <ul>
+            <li>Shipped design-system components; cut dev time per feature by ~30%.</li>
+            <li>Implemented accessibility (WCAG 2.1 AA) across core flows.</li>
+            <li>Introduced e2e tests (Playwright); prevented regressions on 15+ releases.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>Projects</h2>
+        <div class="item">
+          <h3>Pet Nutrition (Monorepo)</h3>
+          <div class="sub">Next.js app + Node/Express API + Supabase • <a href="https://github.com/yourusername/pet-nutrition">GitHub</a> • <a href="https://pet-nutrition.example">Live</a></div>
+          <ul>
+            <li>Implemented RLS policies on Supabase for secure per-user data.</li>
+            <li>Dockerized dev & prod; compose for local Postgres.</li>
+          </ul>
+        </div>
+        <div class="item">
+          <h3>QR Food Ordering (Glide + Node)</h3>
+          <div class="sub">Glide, Webhooks, SMSPoh, n8n • <a href="https://github.com/yourusername/qr-ordering">GitHub</a></div>
+          <ul>
+            <li>Built modifiers/variants, kitchen slips, SMS order updates.</li>
+            <li>Admin, Kitchen Dashboard, and User app flows.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="grid-2">
+        <div>
+          <h2>Education</h2>
+          <ul class="clean">
+            <li>
+              <div class="row"><span class="left">B.Sc. in Computer Science</span><span class="right">2016 – 2020</span></div>
+              <div class="sub">University Name, City</div>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h2>Certifications</h2>
+          <ul class="clean">
+            <li>Meta Front-End Developer Professional Certificate (2024)</li>
+            <li>Google Analytics Certification (2023)</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>Tech Stack Badges</h2>
+        <div class="badges">
+          <span class="badge">Next.js</span>
+          <span class="badge">Express.js</span>
+          <span class="badge">Supabase</span>
+          <span class="badge">Docker</span>
+          <span class="badge">GitHub Actions</span>
+        </div>
+      </section>
+
+      <footer>
+        <p>Last updated: <span id="updated"></span> • © <span id="year"></span> Your Name</p>
+        <div id="diagnostics">
+          <strong>Diagnostics:</strong>
+          <ul id="diag-list" class="clean"></ul>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Defer ensures code runs after DOM is parsed -->
+  <script defer>
+    (function () {
+      'use strict';
+
+      function addDiag(ok, msg) {
+        var list = document.getElementById('diag-list');
+        if (!list) return;
+        var li = document.createElement('li');
+        li.textContent = (ok ? 'PASS: ' : 'FAIL: ') + msg;
+        li.className = ok ? 'pass' : 'fail';
+        list.appendChild(li);
+        (ok ? console.log : console.error)(li.textContent);
+      }
+
+      document.addEventListener('DOMContentLoaded', function () {
+        // Safely set footer dates
+        var yearEl = document.getElementById('year');
+        var updatedEl = document.getElementById('updated');
+        if (yearEl) {
+          yearEl.textContent = new Date().getFullYear();
+          addDiag(true, '#year present and updated');
+        } else {
+          addDiag(false, '#year element is missing');
+        }
+        if (updatedEl) {
+          updatedEl.textContent = new Date().toLocaleDateString();
+          addDiag(true, '#updated present and updated');
+        } else {
+          addDiag(false, '#updated element is missing');
+        }
+
+        // Print button
+        var printBtn = document.getElementById('print-btn');
+        if (printBtn) {
+          printBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            if (typeof window.print === 'function') {
+              window.print();
+            } else {
+              addDiag(false, 'window.print is not available in this environment');
+            }
+          });
+          printBtn.setAttribute('data-handler', 'attached');
+          addDiag(printBtn.getAttribute('data-handler') === 'attached',
+                  'Print button listener attached');
+        } else {
+          addDiag(false, '#print-btn not found');
+        }
+
+        // TEST: profile image presence & load
+        var img = document.getElementById('profile-img');
+        if (img) {
+          addDiag(true, 'Profile image element exists');
+          function reportImageStatus() {
+            if (img.naturalWidth > 0) {
+              addDiag(true, 'Profile image loaded (' + img.naturalWidth + 'x' + img.naturalHeight + ')');
+            } else {
+              addDiag(false, 'Profile image failed to load — check src path/file name');
+            }
+          }
+          if (img.complete) {
+            // If already attempted to load, check now
+            reportImageStatus();
+          } else {
+            img.addEventListener('load', reportImageStatus, { once: true });
+            img.addEventListener('error', function () {
+              addDiag(false, 'Profile image could not be loaded (error event)');
+            }, { once: true });
+          }
+        } else {
+          addDiag(false, 'Profile image element (#profile-img) not found');
+        }
+
+        // Extra sanity checks
+        addDiag(!!document.querySelector('.card'), '.card container exists');
+        addDiag(!!document.querySelectorAll('.item').length, 'Experience/Projects items rendered');
+      });
+    })();
+  </script>
+</body>
+</html>
